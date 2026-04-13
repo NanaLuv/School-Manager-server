@@ -27,9 +27,6 @@ const clearRelevantCaches = (operation, data = {}) => {
       cache.del("classes_list_with_counts");
       break;
 
-    // case "UPDATE_TERM":
-    //   cache.del("current_terms_list");
-    //   break;
 
     case "UPDATE_CLASS":
       cache.del("classes_list_with_counts");
