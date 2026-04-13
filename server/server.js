@@ -12,7 +12,6 @@ const allowedOrigins = [
   "http://localhost:3000",
   "https://your-netlify-app.netlify.app", // Will update after Netlify deploy
   process.env.FRONTEND_URL,
-
 ];
 
 app.use(
@@ -35,12 +34,12 @@ app.use("/uploads", express.static("uploads"));
 app.use("/uploads/school-logo", express.static("uploads/school-logo"));
 
 // For production, serve static files if needed
-if (process.env.NODE_ENV === "production") {
-  // app.use(express.static(path.join(__dirname, "../client/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-  });
-}
+// if (process.env.NODE_ENV === "production") {
+//   // app.use(express.static(path.join(__dirname, "../client/build")));
+//   app.get("*", (req, res) => {
+//     // res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+//   });
+// }
 
 const port = process.env.SERVER_PORT;
 
@@ -55,7 +54,7 @@ async function testConnection() {
   }
 }
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, "0.0.0.0", () => {
   console.log("Server running on port " + port);
   testConnection();
 });
